@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(MyApp());
@@ -37,6 +38,14 @@ class _HomePageState extends State<HomePage> {
     getCount();
   }
 
+  void launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not lauunch $url';
+    }
+  }
+
   void getCount() async {
     isLoading = true;
     var resposne = await http.get('http://127.0.0.1:3000/count');
@@ -57,8 +66,14 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: 25),
-            child: Icon(Icons.info_outline, color: Color(0xff6C8BF5), size: 30),
+            padding: EdgeInsets.only(right: 10),
+            child: IconButton(
+              icon:
+                  Icon(Icons.info_outline, color: Color(0xff6C8BF5), size: 30),
+              onPressed: () {
+                launchURL('https://github.com/mmedhat1910/Friday');
+              },
+            ),
           )
         ],
       ),
