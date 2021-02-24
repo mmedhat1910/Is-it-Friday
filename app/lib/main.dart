@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
 
   void getCount() async {
     isLoading = true;
-    var resposne = await http.get('http://127.0.0.1:3000/count');
+    var resposne = await http.get('https://mmedhat-friday.herokuapp.com/count');
     var data = convert.jsonDecode(resposne.body)[0];
     print(data['count']);
     setState(() {
