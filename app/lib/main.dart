@@ -68,8 +68,11 @@ class _HomePageState extends State<HomePage> {
           Padding(
             padding: EdgeInsets.only(right: 10),
             child: IconButton(
-              icon:
-                  Icon(Icons.info_outline, color: Color(0xff6C8BF5), size: 30),
+              icon: Icon(
+                Icons.info_outline,
+                color: Color(0xff6C8BF5),
+                size: 30,
+              ),
               onPressed: () {
                 launchURL('https://github.com/mmedhat1910/Friday');
               },
