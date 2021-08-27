@@ -1,6 +1,6 @@
 # Is it Friday?
 
-Application inspired by the existing app *Is it Tuesday*
+Dummy Application inspired by the existing app *Is it Tuesday*
 
 
 ## Get the app
